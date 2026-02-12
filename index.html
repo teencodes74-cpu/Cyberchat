@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberChat by teencodes</title>
+    <meta name="description" content="CyberChat by teencodes - ChatGPT-style AI chat powered by a secure Cloudflare Worker backend." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>CyberChat</h1>
+          <p>Made by teencodes</p>
+        </div>
+        <button id="clearChatBtn" class="btn btn-ghost" type="button">Clear chat</button>
+      </header>
+
+      <section id="errorBanner" class="error-banner hidden" role="alert"></section>
+
+      <main id="chatWindow" class="chat-window" aria-live="polite"></main>
+
+      <form id="chatForm" class="composer" autocomplete="off">
+        <label for="messageInput" class="sr-only">Type your message</label>
+        <textarea
+          id="messageInput"
+          name="message"
+          rows="1"
+          maxlength="2500"
+          placeholder="Message CyberChat..."
+          required
+        ></textarea>
+        <button id="sendBtn" class="btn btn-send" type="submit" aria-label="Send message">
+          <span class="btn-text">➤</span>
+          <span class="spinner hidden" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
