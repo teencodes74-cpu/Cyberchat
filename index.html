@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberChat</title>
+    <meta name="description" content="CyberChat by teencodes - AI chat powered by a Cloudflare Worker backend." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="chat-app">
+      <!-- App header with branding and quick actions -->
+      <header class="chat-header">
+        <div>
+          <h1>CyberChat</h1>
+          <p>Made by teencodes</p>
+        </div>
+        <button id="clearChatBtn" class="clear-btn" type="button">Clear Chat</button>
+      </header>
+
+      <!-- Inline error space for global network/API failures -->
+      <section id="errorBanner" class="error-banner hidden" role="alert"></section>
+
+      <!-- Scrollable message thread -->
+      <main id="chatMessages" class="chat-messages" aria-live="polite"></main>
+
+      <!-- Fixed composer at bottom -->
+      <form id="chatForm" class="chat-composer" autocomplete="off">
+        <label for="chatInput" class="sr-only">Type your message</label>
+        <textarea
+          id="chatInput"
+          rows="1"
+          maxlength="2500"
+          placeholder="Message CyberChat..."
+          required
+        ></textarea>
+        <button id="sendBtn" class="send-btn" type="submit" aria-label="Send message">
+          <span class="send-icon">➤</span>
+          <span class="send-spinner hidden" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
